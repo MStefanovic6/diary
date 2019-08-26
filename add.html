@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Diary | Add</title>
+</head>
+
+<body>
+    <header>
+        <img src="icons/mozilla.jpg" width="70">
+        <nav>
+            <ol>
+                <li>
+                    <a href="index.html">View entries</a>
+                </li>
+                <li>
+                    <a href="add.html">Add entry</a>
+                </li>
+                <li>
+                    <a href="media-library.html">Open media library</a>
+                </li>
+            </ol>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Add an entry</h1>
+
+            <form id="form" onsubmit="handleSubmit(event)">
+                <button>Save</button>
+                <button type="reset">Reset</button>
+                <br>
+                <textarea id="text" cols="70" rows="6" autofocus required>Write in here</textarea>
+                <br>
+                <button>Save</button>
+                <button type="reset">Reset</button>
+            </form>
+        </section>
+    </main>
+    <script src="storage.js"></script>
+    <script src="add.js"></script>
+</body>
+
+</html>

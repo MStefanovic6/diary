@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Media library</title>
+    </head>
+    <body>
+        <header>
+            <img src="icons/mozilla.jpg" width="70">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">View entries</a>
+                    </li>
+                    <li>
+                        <a href="add.html">Add entry</a>
+                    </li>
+                    <li>
+                        <a href="media-library.html">Open media library</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h1>Media library</h1>
+    
+                <button>Download all media items</button>
+
+                <form>
+                    <label for="from">From</label>
+                    <input type="date" id="from">
+
+                    <label for="to">To</label>
+                    <input type="date" id="to">
+
+                    <button>Download media created between these dates</button>
+                </form>
+
+                <label for="order">Sort by</label>
+                <select id="order">
+                    <option value="time">Newest first</option>
+                    <option value="time-reverse">Oldest first</option>
+                    <option value="name">Filename A-Z</option>
+                    <option value="name-reverse">Filename Z-A</option>
+                </select>
+
+                <ul>
+                    <li>
+                        <img src="media-library/firefox.png" height="40">
+                    </li>
+                    <li>
+                        <audio controls src="media-library/2019-08-12-0.mp3"></audio>
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </body>
+</html>

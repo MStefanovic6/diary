@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Diary | Entry</title>
+    </head>
+    <body>
+        <header>
+            <img src="icons/mozilla.jpg" width="70">
+            <nav>
+                <ol>
+                    <li>
+                        <a href="index.html">View entries</a>
+                    </li>
+                    <li>
+                        <a href="add.html">Add entry</a>
+                    </li>
+                    <li>
+                        <a href="media-library.html">Open media library</a>
+                    </li>
+                </ol>
+            </nav>
+        </header>
+        <main>
+            <section>
+                <h1>Entries</h1>
+    
+                <label for="entries-view-text">Text</label>
+                <input type="radio" name="entries-view" id="entries-view-text" onchange="toggleView(event)" checked>
+                <label for="entries-view-location">Location</label>
+                <input type="radio" name="entries-view" id="entries-view-location" onchange="toggleView(event)" >
+
+                <section id="entries-text">
+                    <h2>Text</h2>
+
+                    <button onclick="eventsOnViewEntriesPage.print()">Print</button>
+                    <button>Download entries as <samp>.txt</samp></button>
+        
+                    <label for="order">Sort by</label>
+                    <select id="order">
+                        <option value="time">Newest first</option>
+                        <option value="time-reverse">Oldest first</option>
+                        <option value="location">Location A-Z</option>
+                        <option value="location-reverse">Location Z-A</option>
+                    </select>
+        
+                    <ul>
+                        <!-- <li>
+                            <article>
+                                <time id="2019-08-12" datetime="2019-08-12">Monday, 12 August, 2019</time>
+                                <br>
+                                <button type="button">Belgrade, Serbia</button>
+                                <div>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, urna consequat felis vehicula class ultricies mollis dictumst, aenean non a in donec nulla. Phasellus ante pellentesque erat cum risus consequat imperdiet aliquam, integer placerat et turpis mi eros nec lobortis taciti, vehicula nisl litora tellus ligula porttitor metus.</p>
+                                    <p>Vivamus integer non suscipit taciti mus etiam at primis tempor sagittis sit, euismod libero facilisi aptent elementum felis blandit cursus gravida sociis erat ante, eleifend lectus nullam dapibus netus feugiat curae curabitur est ad. Massa curae fringilla porttitor quam sollicitudin iaculis aptent leo ligula euismod dictumst, orci penatibus mauris eros etiam praesent erat volutpat posuere hac. Metus fringilla nec ullamcorper odio aliquam lacinia conubia mauris tempor, etiam ultricies proin quisque lectus sociis id tristique, integer phasellus taciti pretium adipiscing tortor sagittis ligula.</p>
+                                </div>
+                                <audio controls src="media-library/2019-08-12-0.mp3"></audio>
+                            </article>
+                        </li>
+                        <li>
+                            <article>
+                                <time id="2019-08-11" datetime="2019-08-11">Sunday, 11 August, 2019</time>
+                                <br>
+                                <button type="button">Belgrade, Serbia</button>
+                                <div>
+                                    <p>Mollis pretium lorem primis senectus habitasse lectus scelerisque donec, ultricies tortor suspendisse adipiscing fusce morbi volutpat pellentesque, consectetur mi risus molestie curae malesuada cum. Dignissim lacus convallis massa mauris enim ad mattis magnis senectus montes, mollis taciti phasellus accumsan bibendum semper blandit suspendisse faucibus nibh est, metus lobortis morbi cras magna vivamus per risus fermentum. Dapibus imperdiet praesent magnis ridiculus congue gravida curabitur dictum sagittis, enim et magna sit inceptos sodales parturient pharetra mollis, aenean vel nostra tellus commodo pretium sapien sociosqu.</p>
+                                    <img src="media-library/firefox.png" width="100">
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article>
+                                <time id="2019-08-10" datetime="2019-08-10">Saturday, 10 August, 2019</time>
+                                <br>
+                                <button type="button">Belgrade, Serbia</button>
+                                <div>
+                                    <p>Adipiscing tempus leo dis eget dolor fusce ultricies urna at viverra integer, sed gravida sit quisque curabitur blandit tellus mus sodales posuere convallis nascetur, pharetra parturient venenatis nullam porttitor nisl facilisis lacinia ligula litora. Hac dapibus vitae sagittis id congue sollicitudin ornare ultrices, ultricies dignissim facilisi class aenean quis consequat euismod, diam cras vestibulum dictum nibh leo pulvinar. Eu laoreet hac himenaeos felis tellus nostra blandit curae, semper gravida quis mus fames volutpat ad amet hendrerit, mauris porttitor platea nam class dolor feugiat.</p>
+                                    <p>Faucibus amet arcu augue mi taciti vitae auctor ligula, nostra rutrum vivamus interdum risus conubia senectus per duis, maecenas dui semper laoreet ante velit scelerisque. Arcu scelerisque porta cum fames ipsum orci elit nisl lacinia, risus sit tellus pretium fringilla lorem lobortis urna, turpis odio feugiat sem hac proin ac consequat. Semper scelerisque feugiat auctor lacus iaculis dignissim porta facilisis sodales, aliquam nam fusce magnis elementum donec congue ut felis nulla, consequat massa porttitor sociosqu odio volutpat etiam viverra.</p>
+                                </div>
+                            </article>
+                        </li> -->
+                    </ul>
+                </section>
+
+                <section id="entries-location">
+                    <h2>Location</h2>
+
+                    <div id="location" style="height: 300px; width: 500px;"></div>
+                </section>
+            </section>
+        </main>
+
+        <!-- Google Maps -->
+        <script>
+            var googleMap;
+            function initMap () {
+                googleMap = new google.maps.Map(document.getElementById('location'), {
+                    center: {lat: -0.583, lng: -360.318},
+                    zoom: 0,
+                    disableDefaultUI: true
+                });
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap" async defer></script>
+        <script src="storage.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
